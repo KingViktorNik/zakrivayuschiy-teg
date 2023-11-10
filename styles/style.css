@@ -321,16 +321,16 @@
   color: var(--bg-color);
 }
 
-/* подвал */
+/* кнопка сохранить на память  */
 
-.footer {
+.article__save-button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-block-start: 50px;
 }
 
-.footer_save-button__text {
+.article__save-button__text {
   display: flex;
   gap: 8px;
 }
@@ -402,9 +402,9 @@
     block-size: 84px;
   }
 
-  /* подвал */
+  /* кнопка сохранить на память  */
 
-  .footer_save-button__text {
+  .article__save-button__text {
     flex-direction: column;
     line-height: 0.9;
   }
