@@ -56,8 +56,8 @@
   background-size: 4px;
   background-attachment: fixed;
   font-variation-settings: 'wght' var(--text-wgth, 400);
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  /* min-inline-size: 320px; */
+  /* min-block-size: 100dvb; */
 }
 
 /* шапка */
@@ -176,6 +176,8 @@
 
 .card__item-image__img {
   border-block: 2px solid var(--accent-color);
+  object-fit: cover;
+  object-position: center;
   inline-size: 100%;
 }
 
