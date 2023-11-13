@@ -77,13 +77,11 @@
   flex-wrap: wrap;
   grid-row: 2 / 3;
   justify-content: center;
-  margin-block-start: 10px;
   font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   text-transform: uppercase;
 }
 
 .header__title span {
-  margin-block-start: 10px;
   font-size: clamp(0.875rem, 0.2179rem + 2.8037vw, 1.4375rem);
 }
 
@@ -101,7 +99,7 @@
 }
 
 .theme-menu__item:not(:last-child) {
-  margin-block-end: 10px;
+  margin-block-end: 7px;
 }
 
 .theme-menu__button {
@@ -199,7 +197,7 @@
 
 .card__item-text {
   margin: 25px;
-  margin-block-start: 20px;
+  margin-block-start: 17px;
   line-height: 1.16;
 }
 
@@ -268,7 +266,7 @@
   transition: fill 0.3s 0.05s;
 }
 
-.card__icon-button:active .like-icon .main-body {
+.card__icon-button:active .like-icon .main-body:not(.is-liked) {
   fill: var(--like-icon-active-color);
   transition: fill 0.3s 0.05s;
 }
@@ -358,15 +356,15 @@
     block-size: 327px;
   }
 
-  .header__title span {
-    margin-block-start: 0;
-  }
+  .header__title {
+    margin-block-start: 5px;
+  }  
 
   /* меню выбора темы */
 
   .header__theme-menu {
     align-self: start;
-    padding-block-start: 10px;
+    padding-block-start: 8px;
   }
 
   .theme-menu__list {
@@ -376,10 +374,11 @@
   /* основной контент */
 
   .card__item__title {
-    padding-block: 4px;
+    padding-block-end: 1px;
   }
 
   .card__item-text {
+    margin-block-start: 20px;
     line-height: 1.17;
   }
 
