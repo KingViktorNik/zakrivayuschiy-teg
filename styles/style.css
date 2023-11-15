@@ -64,7 +64,7 @@
 
 .header {
   display: grid;
-  grid-template-rows: repeat(3, calc(100% / 3));
+  grid-template-rows: 1fr auto 1fr;
   margin-block: 100px;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font);
@@ -77,7 +77,7 @@
   flex-wrap: wrap;
   grid-row: 2 / 3;
   justify-content: center;
-  margin-block-start: 11px;
+  margin-block-end: 20px;
   font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   text-transform: uppercase;
 }
@@ -101,7 +101,7 @@
 }
 
 .theme-menu__item:not(:last-child) {
-  margin-block-end: 10px;
+  margin-block-end: 5px;
 }
 
 .theme-menu__button {
@@ -202,7 +202,7 @@
 
 .card__item-text {
   margin: 25px;
-  margin-block-start: 20px;
+  margin-block-start: 15px;
   line-height: 1.16;
 }
 
@@ -367,29 +367,15 @@
 
   .header {
     block-size: 327px;
-    padding-block-end: 10px;
   }
 
-  .header__title span {
-    margin-block-start: 10px;
-  }
-  
   /* меню выбора темы */
 
   .header__theme-menu {
     align-self: start;
-    padding-block-start: 12px;
-    line-height: 1.4;
+    padding-block-start: 7px;
   }
 
-  .theme-menu__list {
-    margin-block-start: 5px;
-  }
-
-  .theme-menu__item:not(:last-child) {
-    margin-block-end: 7px;
-  }
-  
   /* основной контент */
 
   .card__item-text {
