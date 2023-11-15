@@ -353,7 +353,13 @@
   aspect-ratio: 1 / 1;
 }
 
-
+@supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .card__item-image__decor {
+      -webkit-text-stroke: 1px var(--bg-color);
+      text-stroke: 1px var(--bg-color);
+      text-shadow: none;
+  }
+} 
 
 @media (width <= 375px) {
   
