@@ -64,7 +64,7 @@
 
 .header {
   display: grid;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: repeat(3, calc(100% / 3));
   margin-block: 100px;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font);
@@ -367,6 +367,7 @@
 
   .header {
     block-size: 327px;
+    padding-block-end: 10px;
   }
 
   .header__title span {
@@ -379,6 +380,10 @@
     align-self: start;
     padding-block-start: 12px;
     line-height: 1.4;
+  }
+
+  .theme-menu__list {
+    margin-block-start: 5px;
   }
 
   .theme-menu__item:not(:last-child) {
