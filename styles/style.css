@@ -80,11 +80,9 @@
   margin-block-end: 20px;
   font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   text-transform: uppercase;
-  padding-block-start: 10px;
 }
 
 .header__title span {
-  margin-block-start: 10px;
   font-size: clamp(0.875rem, 0.2179rem + 2.8037vw, 1.4375rem);
 }
 
