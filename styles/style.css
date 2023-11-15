@@ -34,7 +34,7 @@
   background-color: transparent;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translate(-4px, -4px);
-  
+
   /* размеры с учетам рамки (2px ширина border)*/
 
   inline-size: calc(2px * 2 + 100%);
@@ -76,7 +76,7 @@
 
 .header__logo {
   grid-row: 2 / 3;
-  justify-self: center;  
+  justify-self: center;
   padding-block-start: 2%;
   font-size: clamp(3.0625rem, 1.8943rem + 4.9844vw, 4.0625rem);
   text-align: center;
@@ -170,7 +170,7 @@
 }
 
 .card__item__title {
-  
+
   padding-inline: 10px;
   padding-block: 4.6px;
 }
@@ -363,10 +363,10 @@
       -webkit-text-stroke: 1px var(--bg-color, #fff);
       text-stroke: 1px var(--bg-color, #fff);
   }
-} 
+}
 
 @media (width <= 375px) {
-  
+
   /* шапка */
 
   .header {
@@ -376,18 +376,18 @@
 
   .header__logo {
     padding-block-start: 0;
-  }  
+  }
 
   .header__title {
     padding-block-start: 2%;
-  }  
+  }
 
   /* меню выбора темы */
 
   .header__theme-menu {
     padding-block-start: 4%;
   }
-  
+
   /* основной контент */
 
   .card__item-text {
