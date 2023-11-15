@@ -58,11 +58,16 @@
   font-variation-settings: 'wght' var(--text-wgth, 400);
   /* min-inline-size: 320px; */
   /* min-block-size: 100dvb; */
+  display: grid;
+  justify-items: center;
 }
 
 /* шапка */
 
 .header {
+  max-inline-size: 700px;
+  min-inline-size: 375px;
+  
   display: grid;
   grid-template-rows: 1fr auto 1fr;
   /* grid-template-rows: repeat(3, calc(100% / 3)); */
@@ -151,6 +156,9 @@
 /* основной контент */
 
 .card__item {
+  max-inline-size: 700px;
+  min-inline-size: 375px;
+
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
 }
@@ -167,6 +175,7 @@
 }
 
 .card__item__title {
+  
   padding-inline: 10px;
   padding-block: 4.6px;
 }
