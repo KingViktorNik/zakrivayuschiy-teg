@@ -1,1 +1,17 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --accent-font: PressStart2P-Regular;
+  --main-font: Inter-Variable;
+  --header-text-wgth: 700;
+  --text-wgth: 400;
+
+  --bg-color: #fff;
+  --accent-color: #000;
+  --decor-text-color: #000;
+
+  --bg-image: url("../svg/pattern-light.svg");
+
+  /* анимация сердце */
+  --like-icon-contour-color: #000;
+  --like-icon-active-color: #FF0000;
+  --like-icon-sparks-color: #FF0000;
+}
