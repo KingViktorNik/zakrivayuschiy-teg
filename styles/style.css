@@ -196,6 +196,7 @@
                0px  1px 1px var(--bg-color, #fff),
               -1px  0px 1px var(--bg-color, #fff),
                0px -1px 1px var(--bg-color, #fff);
+  mix-blend-mode: hard-light;
   inset-inline-end: 25px;
   inset-block-start: 25px;
 }
