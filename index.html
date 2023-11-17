@@ -82,7 +82,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -113,7 +113,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -144,7 +144,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -175,7 +175,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -206,7 +206,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -237,7 +237,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -268,7 +268,7 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
         <li class="card__item">
@@ -299,12 +299,16 @@
                 fill="var(--like-icon-sparks-color)"/>
               </svg>
             </button>
-            <button class="card__like-button" type="button"><span class="button__text">Like</span></button>
+            <button class="card__like-button button" type="button"><span class="button__text">Like</span></button>
           </div>
         </li>
       </ul>
       <div class="article__save-button">
-        <button class="save-button">
+        <button class="save-button button"
+          type="button"
+          onclick="window['save-id'].showModal()"
+          aria-controls="save-id"
+        >
           <span class="article__save-button__text button__text">
             <svg class="save-button__img">
               <use href="./svg/floppy.svg#floppy"></use>
@@ -312,6 +316,18 @@
             Сохранить на память
           </span>
         </button>
+        <dialog id="save-id" class="dialog-save">
+          <svg class="dialog-save__img">
+            <use href="./svg/floppy.svg#floppy"></use>
+          </svg>
+          <h2 class="dialog-save__title">Вставьте дискету, чтобы продолжить</h2>
+          <button class="dialog-save__button button"
+            type="button"
+            onclick="window['save-id'].close()"
+          >
+            <span class="button__text">ок</span>
+          </button>
+        </dialog>
       </div>
     </main>
     <script src="./scripts/set-theme.js"></script>
