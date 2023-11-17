@@ -419,16 +419,19 @@
 /* модальное окно cохранить на память */
 
 .dialog-save {
-  display: grid;
-  grid-template-columns: min-content 2fr;
-  justify-content: space-between;
-  align-content: center;
-  gap: 20px 30px;
   border: 2px solid var(--accent-color);
   padding: 30px;
   color: var(--accent-color);
   background-color: var(--bg-color);
   inline-size: 357px;
+}
+
+.dialog-save  form {
+  display: grid;
+  grid-template-columns: min-content 2fr;
+  justify-content: space-between;
+  align-content: center;
+  gap: 20px 30px;
 }
 
 .dialog-save:not([open]) {

@@ -317,16 +317,15 @@
           </span>
         </button>
         <dialog id="save-id" class="dialog-save">
-          <svg class="dialog-save__img">
-            <use href="./svg/floppy.svg#floppy"></use>
-          </svg>
-          <h2 class="dialog-save__title">Вставьте дискету, чтобы продолжить</h2>
-          <button class="dialog-save__button button"
-            type="button"
-            onclick="window['save-id'].close()"
-          >
-            <span class="button__text">ок</span>
-          </button>
+          <form method="dialog">
+            <svg class="dialog-save__img">
+              <use href="./svg/floppy.svg#floppy"></use>
+            </svg>
+            <h2 class="dialog-save__title">Вставьте дискету, чтобы продолжить</h2>
+            <button class="dialog-save__button button" autofocus>
+              <span class="button__text">ок</span>
+            </button>
+          </form>
         </dialog>
       </div>
     </main>
