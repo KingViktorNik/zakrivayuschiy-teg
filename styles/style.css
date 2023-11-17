@@ -311,9 +311,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--button-text-color, #fff);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
-  transition:  color 1s ease;
+  mix-blend-mode: difference;
 
   /* размеры с учетам рамки (2px ширина border)*/
 
@@ -321,10 +322,6 @@
   inset-block-start: -2px;
   inline-size: calc(2px * 2 + 100%);
   block-size: calc(2px * 2 + 100%);
-}
-
-.button__text:hover {
-  color: var(--bg-color, #fff);
 }
 
 /* кнопка сохранить на память  */

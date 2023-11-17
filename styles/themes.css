@@ -9,6 +9,7 @@
 
   --bg-color: #fff;
   --accent-color: #000;
+  --button-text-color: #fff;
   --decor-text-color: #000;
   --bg-image:
     repeating-linear-gradient(90deg, #b3b3b3 0 2px, transparent 2px 4px),
@@ -24,6 +25,7 @@
   --text-wgth: 465;
 
   --bg-color: #000;
+  --button-text-color: #00CC14;
   --accent-color: #00CC14;
   --decor-text-color: #00CC14;
   --bg-image:
@@ -42,6 +44,7 @@
 
     --bg-color: #000;
     --accent-color: #00CC14;
+    --button-text-color: #00CC14;
     --decor-text-color: #00CC14;
     --bg-image:
     repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
