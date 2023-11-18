@@ -69,6 +69,10 @@
 }
 
 .filter-brightness-hue-rotate {
+  filter: hue-rotate(-90deg) brightness(1.4);
+}
+
+.filter-brightness-hue-rotate_2 {
   filter: hue-rotate(50deg) brightness(1.5);
 }
 
@@ -418,11 +422,6 @@
 /* модальное окно cохранить на память */
 
 .dialog-save {
-  display: grid;
-  grid-template-columns: min-content 2fr;
-  justify-content: space-between;
-  align-content: center;
-  gap: 20px 30px;
   border: 2px solid var(--accent-color);
   padding: 30px;
   color: var(--accent-color);
@@ -431,7 +430,11 @@
 }
 
 .dialog-save  form {
-  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: min-content 2fr;
+  justify-content: space-between;
+  align-content: center;
+  gap: 20px 30px;
 }
 
 .dialog-save:not([open]) {
@@ -459,6 +462,7 @@
 
 .dialog-save__button {
   position: relative;
+  grid-column: 1 / -1;
   text-align: center;
   text-transform: uppercase;
   inline-size: 100%;
