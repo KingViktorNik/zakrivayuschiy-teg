@@ -1,13 +1,17 @@
 :is(.theme-menu__button,
     .card__icon-button,
-    .card__like-button,
-    .save-button):focus {
+    .button):focus {
   outline: none;
+}
+
+.button {
+  border: 2px solid currentColor;
+  background-color: transparent;
 }
 
 /* заливка кнопки цветом при hover */
 
-:is(.card__like-button, .save-button)::before {
+.button::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -19,13 +23,13 @@
   block-size: 100%;
 }
 
-:is(.card__like-button, .save-button):hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
 /* тень у кнопки при focus-visible */
 
-:is(.card__like-button, .save-button)::after {
+.button::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -41,9 +45,70 @@
   block-size: calc(2px * 2 + 100%);
 }
 
-:is(.card__like-button, .save-button):focus-visible::after {
+.button:focus-visible::after {
   opacity: 1;
   transform: translate(-2px, -2px);
+}
+
+/* фильтры */
+
+.filter-blur {
+  filter: blur(.2rem);
+}
+
+.filter-grayscale {
+  filter: grayscale(.9);
+}
+
+.filter-invert {
+  filter: invert(.9);
+}
+
+.filter-contrast-brightness {
+  filter: contrast(1.2) brightness(1.1);
+}
+
+.filter-brightness-hue-rotate {
+  filter: hue-rotate(-90deg) brightness(1.4);
+}
+
+.filter-brightness-hue-rotate_2 {
+  filter: hue-rotate(50deg) brightness(1.5);
+}
+
+.filter-saturate {
+  filter: saturate(2);
+}
+
+.filter-radial-gradient-center::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #4652ff 15%, #d000ff 40%, #ff6600, #66ff00);
+  mix-blend-mode: color;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.filter-grayscale-linear-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#000 10%, transparent 40% 70%, #000 90%);
+  filter: grayscale(1);
+  mix-blend-mode: color;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.filter-radial-gradient-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(at bottom, transparent 20%, #FCE883, #7FB5B5, #FF9BAA, #A8E4A0, #A2A2D0);
+  mix-blend-mode: multiply;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .page {
@@ -53,9 +118,7 @@
   color: var(--accent-color, #000);
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
-  background-color: var(--bg-color, #fff);
   background-image: var(--bg-image);
-  background-size: 4px;
   background-attachment: fixed;
   font-variation-settings: 'wght' var(--text-wgth, 400);
 }
@@ -65,13 +128,13 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content max-content 1fr;
-  row-gap: 1%;
   margin-block: 100px;
   border: 2px solid var(--accent-color, #000);
+  padding-block: 3.7%;
+  padding-block-end: 20px;
   font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
   background-color: var(--bg-color, #fff);
-  block-size: 368px;
 }
 
 .header__logo {
@@ -95,7 +158,7 @@
 .header__theme-menu {
   grid-row: span 1 / -1;
   justify-self: center;
-  padding-block-start: 2.5%;
+  padding-block-start: 2.8%;
   font-size: 14px;
 }
 
@@ -125,8 +188,9 @@
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
-  margin-inline-start: -20px;
   animation: theme-menu-active 0.5s alternate infinite ease-in-out;
+  inset-inline-start: -20px;
+  inset-block-start: 0;
 }
 
 .theme-menu__button::after {
@@ -170,7 +234,6 @@
 }
 
 .card__item__title {
-
   padding-inline: 10px;
   padding-block: 4.6px;
 }
@@ -179,10 +242,13 @@
 
 .card__item-image {
   position: relative;
+  display: flex;
+  border-block: 2px solid var(--accent-color, #000);
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .card__item-image__img {
-  border-block: 2px solid var(--accent-color, #000);
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
@@ -198,6 +264,7 @@
                0px  1px 1px var(--bg-color, #fff),
               -1px  0px 1px var(--bg-color, #fff),
                0px -1px 1px var(--bg-color, #fff);
+  mix-blend-mode: hard-light;
   inset-inline-end: 25px;
   inset-block-start: 25px;
 }
@@ -300,32 +367,27 @@
 
 .card__like-button {
   position: relative;
-  border: 2px solid currentColor;
-  background-color: transparent;
-  inline-size: 130px;
-  block-size: 39px;
+  padding-inline: 17px;
+  padding-block: 7px;
+  min-inline-size: 130px;
+  min-block-size: 39px;
 }
 
 .button__text {
-  position: absolute;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--button-text-color, #fff);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
-  transition:  color 1s ease;
+  mix-blend-mode: difference;
 
   /* размеры с учетам рамки (2px ширина border)*/
 
   inset-inline-start: -2px;
   inset-block-start: -2px;
-  inline-size: calc(2px * 2 + 100%);
-  block-size: calc(2px * 2 + 100%);
-}
-
-.button__text:hover {
-  color: var(--bg-color, #fff);
+  min-inline-size: calc(2px * 2 + 100%);
+  min-block-size: calc(2px * 2 + 100%);
 }
 
 /* кнопка сохранить на память  */
@@ -357,6 +419,56 @@
   aspect-ratio: 1 / 1;
 }
 
+/* модальное окно cохранить на память */
+
+.dialog-save {
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  inline-size: 357px;
+}
+
+.dialog-save  form {
+  display: grid;
+  grid-template-columns: min-content 2fr;
+  justify-content: space-between;
+  align-content: center;
+  gap: 20px 30px;
+}
+
+.dialog-save:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog-save::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog-save__img {
+  align-self: center;
+  inline-size: 39px;
+  aspect-ratio: 1 / 1;
+}
+
+.dialog-save__title {
+  justify-self: start;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.dialog-save__button {
+  position: relative;
+  grid-column: 1 / -1;
+  text-align: center;
+  text-transform: uppercase;
+  inline-size: 100%;
+  min-block-size: 38px;
+}
+
 @supports((text-stroke: 1px var(--bg-color, #fff)) or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   .card__item-image__decor {
       text-shadow: none;
@@ -371,7 +483,7 @@
 
   .header {
     row-gap: 2%;
-    block-size: 327px;
+    min-block-size: 327px;
   }
 
   .header__logo {
